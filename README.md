@@ -7,6 +7,10 @@ programming. The exercises here are a continuation of the exercises found in
 These exercises use Strings, loops, Objects, Arrays, and Functions to solve
 logic problems.
 
+## Travis 
+
+[![Build Status](https://travis-ci.org/sarahnash/js201-continued.svg?branch=master)](https://travis-ci.org/sarahnash/js201-continued)
+
 ## Install
 
 Make sure that [Node.js] and [npm] are installed. Then, from this directory type:
