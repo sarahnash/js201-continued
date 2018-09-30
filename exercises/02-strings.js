@@ -8,6 +8,13 @@
 // Example:
 // reverse("skoob") --> "books"
 
+function reverse(string){
+    if (string == null) return false
+    var getLetters = string.split("")
+    var reverseLetters = getLetters.reverse()
+    var finalString = reverseLetters.join("")
+    return finalString
+    }
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,7 +25,18 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
-
+function findLongestWord(stringOfWords){
+    var arrayOfWords = stringOfWords.split(' ')
+    var arrayOfLengths = []
+    for (var i=0;i < arrayOfWords.length;i++){
+        arrayOfLengths.push(arrayOfWords[i].length);
+        }
+    var biggestNum = Math.max.apply(null, arrayOfLengths)
+    var longestWordIndex = arrayOfLengths.indexOf(biggestNum) 
+    var longestWord = arrayOfWords[longestWordIndex]
+    return longestWord
+   
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
