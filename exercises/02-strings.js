@@ -88,12 +88,18 @@ return sentenceStringPieces.join(' ')
 
 function split(myString, myDelimiter){
     if (!myString.includes(myDelimiter)) return myString
-    var findDelimiters = []
-    for (i=0; i < myString.length; i++) {
-        findDelimiters.push(myString[i].indexOf(myDelimiter))}
-    console.log(findDelimiters)
-    // splice 0s from array
-    //return words at the indexes left
+    //var findDelimiters = []
+    var index = myString.search(myDelimiter)
+    console.log(index)
+    //try to slice the first word before delimiter, but then how to splice after the delimiter?
+    var splitStrings = []
+    for (i=0; i < myString.length; i++){
+     splitStrings.push(myString.slice(0, index))
+    }
+     console.log(splitStrings)
+    // this slices out the delimiter myString = myString.slice(index, index + myDelimiter.length)
+    
+    //console.log(myString)
 
     }
 
@@ -103,4 +109,4 @@ function split(myString, myDelimiter){
 
 
 
-console.log(split('a-b-c', '-'))
+console.log(split('APPLExxBANANAxxCHERRY', 'xx'))
