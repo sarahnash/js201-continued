@@ -88,18 +88,27 @@ return sentenceStringPieces.join(' ')
 
 function split(myString, myDelimiter){
     if (!myString.includes(myDelimiter)) return myString
-    //var findDelimiters = []
-    var index = myString.search(myDelimiter)
-    console.log(index)
+    var index = myString.indexOf(myDelimiter)
+    const myDelimiterLength = myDelimiter.length
     //try to slice the first word before delimiter, but then how to splice after the delimiter?
     var splitStrings = []
-    for (i=0; i < myString.length; i++){
-     splitStrings.push(myString.slice(0, index))
+    while (index !== -1){
+        const string = myString.substring(0, index)
+        splitStrings.push(string)
+
+        myString = myString.substring(string.length)
+        //substring(string.length) = (1st index afterstring, to the end) aka rest of string
+        myString = myString.substring(myDelimiterLength)
+        //now string = (1st index after delimiter, to the end)
+        //so cut out string, then delimiter
+
+        index = myString.indexOf(myDelimiter)
+        //sets index of next delimiter
     }
-     console.log(splitStrings)
-    // this slices out the delimiter myString = myString.slice(index, index + myDelimiter.length)
     
-    //console.log(myString)
+    splitStrings.push(myString)
+
+    return splitStrings
 
     }
 
