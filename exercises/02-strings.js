@@ -9,7 +9,7 @@
 // reverse("skoob") --> "books"
 
 function reverse(string){
-    if (string == null) return false
+    if (string === null) return false
     var getLetters = string.split("")
     var reverseLetters = getLetters.reverse()
     var finalString = reverseLetters.join("")
@@ -47,7 +47,15 @@ function findLongestWord(stringOfWords){
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
-
+function nicer (stringOfWords){
+    const forbiddenWords = ("heck,darn,dang,crappy").split(",")
+    const arrayOfWords = stringOfWords.split(' ')
+    //check if any forbidden words in string
+    var goodWords = arrayOfWords.map(val => forbiddenWords.includes(val) ? '' : val);
+    var filteredgoodWords = goodWords.filter(word => word.length >= 1)
+    var finalNicer = filteredgoodWords.join(' ')  
+    return finalNicer
+    }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
@@ -58,7 +66,14 @@ function findLongestWord(stringOfWords){
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 
-
+function capitalizeAll(sentenceString){
+    var sentenceStringPieces = sentenceString.split(" ")
+    for (i=0; i < sentenceStringPieces.length; i++){
+       sentenceStringPieces[i] = sentenceStringPieces[i].charAt(0).toUpperCase() + sentenceStringPieces[i].substring(1)
+       //substring(1) = substring starting at index 1
+    }
+return sentenceStringPieces.join(' ')
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
@@ -70,3 +85,22 @@ function findLongestWord(stringOfWords){
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+
+function split(myString, myDelimiter){
+    if (!myString.includes(myDelimiter)) return myString
+    var findDelimiters = []
+    for (i=0; i < myString.length; i++) {
+        findDelimiters.push(myString[i].indexOf(myDelimiter))}
+    console.log(findDelimiters)
+    // splice 0s from array
+    //return words at the indexes left
+
+    }
+
+    //loop over the string to find the indexes of the delimiter
+    //splice the string up to the delimiter push to array
+    
+
+
+
+console.log(split('a-b-c', '-'))
