@@ -12,7 +12,7 @@
 
 function fizzbuzz(number){
     var fizzbuzzString = ('')
-    var loopNumber = 0
+    var loopNumber = 1
     while(loopNumber <= number){
         if (loopNumber % 3 !== 0 && loopNumber % 5 !== 0){
             fizzbuzzString += ('.')
@@ -27,13 +27,9 @@ function fizzbuzz(number){
             fizzbuzzString += ('fizzbuzz')
         }
         loopNumber ++
-    //elseif # % 3 === 0 && # % 5 === 0 fizzbuzzString.concat'fizzbuzz'
     }
     return fizzbuzzString
 }
-    //for # <= number do one of these things
-    // if # % 3 !== 0 || # % 5 !== 0 push '.'
-    //elseif # % 3 === 0 || # % 5 !== 0 push 'fizz'
-    //elseif # % 5 === 0 || # % 3 !== 0 push 'buzz'
-    //elseif # % 3 === 0 && # % 5 === 0 push 'fizzbuzz'
-    //fizzbuzz array.join('')
+
+//console.log(fizzbuzz(3))
+//console.log(fizzbuzz(15))
