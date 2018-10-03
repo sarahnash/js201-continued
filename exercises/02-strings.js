@@ -88,11 +88,10 @@ return sentenceStringPieces.join(' ')
 
 function split(myString, myDelimiter){
     if (!myString.includes(myDelimiter)) return myString.split()
-    //console.log(myString)
-    //console.log(myDelimiter)
+    
     var index = myString.indexOf(myDelimiter)
     const myDelimiterLength = myDelimiter.length
-    //try to slice the first word before delimiter, but then how to splice after the delimiter?
+
     var splitStrings = []
     while (index !== -1){
         const string = myString.substring(0, index)
