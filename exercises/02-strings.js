@@ -87,19 +87,16 @@ return sentenceStringPieces.join(' ')
 // split('xyz', 'r') --> ['xyz']
 
 function split(myString, myDelimiter){
-    if (!myString.includes(myDelimiter)) return myString.split()
-    
     var index = myString.indexOf(myDelimiter)
-    const myDelimiterLength = myDelimiter.length
-
-    var splitStrings = []
+    let splitStrings = []
+    
     while (index !== -1){
         const string = myString.substring(0, index)
         splitStrings.push(string)
 
         myString = myString.substring(string.length)
         //substring(string.length) = (1st index afterstring, to the end) aka rest of string
-        myString = myString.substring(myDelimiterLength)
+        myString = myString.substring(myDelimiter.length)
         //now string = (1st index after delimiter, to the end)
         //so cut out string, then delimiter
 
@@ -112,11 +109,6 @@ function split(myString, myDelimiter){
     return splitStrings
 
     }
-
-    //loop over the string to find the indexes of the delimiter
-    //splice the string up to the delimiter push to array
-    
-
 
 //console.log(split('xyz', 'r'))
 //console.log(split('APPLExxBANANAxxCHERRY', 'xx'))
