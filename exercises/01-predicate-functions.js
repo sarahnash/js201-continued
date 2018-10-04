@@ -72,5 +72,6 @@ const map = {"Alabama":"Montgomery","Alaska":"Juneau","Arizona":"Phoenix","Arkan
 function isCapitalCity(state,city){
     if (!map.hasOwnProperty(state)) return false
         var stateIndex = Object.keys(map).indexOf(state)
-        return ((Object.values(map)[stateIndex]) == city)
+        return ((Object.values(map)[stateIndex]) === city)
+
     }
